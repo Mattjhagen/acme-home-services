@@ -1,134 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Acme Home Services Chicago</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    body { font-family: 'Inter', sans-serif; background-color: #090d16; color: #f1f5f9; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-card-hover:hover { border-color: rgba(56, 189, 248, 0.4); transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25); }
+    .glow-bg { background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.18) 0%, rgba(9, 13, 22, 0) 70%); }
+    .hero-img-bg { background-image: linear-gradient(to right, rgba(9, 13, 22, 0.95) 30%, rgba(9, 13, 22, 0.7)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden antialiased">
 
-  <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-xl py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center justify-between w-full md:w-auto">
-        <a href="index.html" class="flex items-center gap-3 text-2xl font-black text-white">
-          <span class="w-10 h-10 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 flex items-center justify-center text-white shadow-lg">
-            <i class="fa-solid fa-wrench"></i>
-          </span>
-          Acme<span class="text-sky-400">Services</span>
-        </a>
-        <a href="tel:3125550199" class="md:hidden bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold px-3.5 py-2 rounded-lg text-sm flex items-center gap-1.5 shadow-md">
-          <i class="fa-solid fa-phone"></i> (312) 555-0199
-        </a>
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 text-sky-200 text-xs font-semibold py-2 px-4 border-b border-sky-800/50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> 3 TECHS ACTIVE NOW
+        </span>
+        <span class="hidden sm:inline">Chicagoland Emergency Dispatch · Average Arrival: 32 Mins</span>
       </div>
+      <div class="flex items-center gap-6">
+        <span class="hidden md:inline"><i class="fa-solid fa-star text-amber-400 mr-1"></i> 4.9 Rating (1,240+ Verified Reviews)</span>
+        <a href="tel:3125550199" class="text-white hover:text-sky-300 font-bold"><i class="fa-solid fa-phone text-sky-400 mr-1"></i> (312) 555-0199</a>
+      </div>
+    </div>
+  </div>
 
-      <nav class="flex flex-wrap items-center justify-center gap-2 sm:gap-6 font-semibold text-sm text-slate-300 bg-slate-800/80 md:bg-transparent p-2 md:p-0 rounded-xl w-full md:w-auto border border-slate-700/50 md:border-none">
-        <a href="index.html" class="hover:text-white hover:bg-slate-700/60 px-3 py-1.5 rounded-lg transition">Home</a>
-        <a href="services.html" class="hover:text-white hover:bg-slate-700/60 px-3 py-1.5 rounded-lg transition">Services</a>
-        <a href="about.html" class="hover:text-white hover:bg-slate-700/60 px-3 py-1.5 rounded-lg transition">About Us</a>
-        <a href="pricing.html" class="hover:text-white hover:bg-slate-700/60 px-3 py-1.5 rounded-lg transition">Pricing</a>
-        <a href="contact.html" class="text-white bg-sky-600 font-bold shadow-md shadow-sky-600/30 px-3 py-1.5 rounded-lg transition">Contact</a>
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 bg-[#090d16]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl py-3.5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-400 via-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-xl shadow-sky-500/20 group-hover:scale-105 transition">
+          <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+        </div>
+        <div>
+          <div class="text-2xl font-black text-white tracking-tight leading-none">Acme<span class="text-sky-400">Services</span></div>
+          <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Plumbing · HVAC · Electrical</div>
+        </div>
+      </a>
+
+      <!-- Always-Visible Navigation Links -->
+      <nav class="flex items-center gap-1 sm:gap-2 bg-slate-900/90 border border-slate-800 p-1.5 rounded-2xl shadow-inner">
+        <a href="index.html" class="text-slate-300 hover:text-white hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-bold transition">Home</a>
+        <a href="services.html" class="text-slate-300 hover:text-white hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-bold transition">Services</a>
+        <a href="about.html" class="text-slate-300 hover:text-white hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-bold transition">About Us</a>
+        <a href="pricing.html" class="text-slate-300 hover:text-white hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-bold transition">Pricing</a>
+        <a href="contact.html" class="bg-sky-500 text-white shadow-lg shadow-sky-500/30 px-4 py-2 rounded-xl text-sm font-bold transition">Contact</a>
       </nav>
 
-      <a href="tel:3125550199" class="hidden md:flex bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-sky-500/20 hover:scale-105 transition items-center gap-2">
-        <i class="fa-solid fa-phone"></i> (312) 555-0199
+      <a href="contact.html" class="hidden lg:flex bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-extrabold px-6 py-3 rounded-xl shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition items-center gap-2 text-sm">
+        <i class="fa-solid fa-calendar-check"></i> Book Online
       </a>
     </div>
   </header>
 
 <main class="flex-grow">
-  <section class="py-16 bg-slate-950 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Contact & 24/7 Service Dispatch</h1>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto">Get in touch with our Chicago service center for scheduling or immediate emergency repairs.</p>
+  <section class="py-20 bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+      <span class="text-sky-400 font-extrabold text-xs uppercase tracking-widest">24/7 DISPATCH CENTER</span>
+      <h1 class="text-4xl sm:text-6xl font-black text-white">Get in Touch or Book Service</h1>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto font-normal">Our Chicago customer care team is available 24 hours a day to answer questions and dispatch technicians.</p>
     </div>
   </section>
 
-  <section class="py-16 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl">
-      <h2 class="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
-      <form class="space-y-4">
-        <div>
-          <label class="block text-slate-300 text-sm font-semibold mb-2">Your Full Name</label>
-          <input type="text" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
-        </div>
-        <div>
-          <label class="block text-slate-300 text-sm font-semibold mb-2">Phone Number</label>
-          <input type="tel" placeholder="(312) 555-0199" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
-        </div>
-        <div>
-          <label class="block text-slate-300 text-sm font-semibold mb-2">Service Needed</label>
-          <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500">
-            <option>Plumbing Repair</option>
-            <option>HVAC / Heating / AC</option>
-            <option>Electrical Service</option>
-            <option>General Question</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-slate-300 text-sm font-semibold mb-2">Message & Details</label>
-          <textarea rows="4" placeholder="Describe the issue you are experiencing..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 py-4 rounded-xl font-bold text-white shadow-lg shadow-sky-500/25">Submit Service Request</button>
-      </form>
+  <section class="py-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <div class="glass-card p-8 md:p-10 rounded-3xl space-y-6">
+        <h2 class="text-2xl font-bold text-white">Schedule Service or Request Callback</h2>
+        <form class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">First & Last Name</label>
+              <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Phone Number</label>
+              <input type="tel" required placeholder="(312) 555-0199" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Email Address</label>
+            <input type="email" placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Service Required</label>
+            <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500">
+              <option>Plumbing (Leaks, Drain, Heater)</option>
+              <option>HVAC (Furnace, AC, Ductwork)</option>
+              <option>Electrical (Panel, EV Charger, Outlets)</option>
+              <option>24/7 Emergency Rapid Dispatch</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Describe Your Repair Need</label>
+            <textarea rows="4" placeholder="Provide a brief description of the issue..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-extrabold py-4 rounded-xl shadow-xl shadow-sky-500/25 transition">
+            Submit Repair Request
+          </button>
+        </form>
+      </div>
     </div>
 
-    <div class="space-y-8">
-      <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl">
-        <h3 class="text-xl font-bold text-white mb-6">Service Center Information</h3>
-        <div class="space-y-4">
+    <div class="lg:col-span-5 space-y-6">
+      <div class="glass-card p-8 rounded-3xl space-y-6">
+        <h3 class="text-xl font-bold text-white">Chicago Service Headquarters</h3>
+        <div class="space-y-4 text-sm text-slate-300">
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
             <div>
-              <p class="font-bold text-white">Address</p>
-              <p class="text-slate-400 text-sm">100 N LaSalle St, Suite 1200<br>Chicago, IL 60602</p>
+              <p class="font-bold text-white">Main Office</p>
+              <p class="text-slate-400 text-xs mt-0.5">100 N LaSalle St, Suite 1200<br>Chicago, IL 60602</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
             <div>
-              <p class="font-bold text-white">Emergency Hotline</p>
-              <p class="text-slate-400 text-sm">(312) 555-0199 (24/7 Available)</p>
+              <p class="font-bold text-white">24/7 Dispatch Hotline</p>
+              <p class="text-slate-400 text-xs mt-0.5">(312) 555-0199 (Always Available)</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
             <div>
-              <p class="font-bold text-white">Email</p>
-              <p class="text-slate-400 text-sm">dispatch@acmehomeservices.com</p>
+              <p class="font-bold text-white">Email Dispatch</p>
+              <p class="text-slate-400 text-xs mt-0.5">dispatch@acmehomeservices.com</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl">
-        <h3 class="text-xl font-bold text-white mb-4">Service Area Coverage</h3>
-        <p class="text-slate-300 text-sm leading-relaxed mb-4">We proudly serve all neighborhoods in Chicago including Downtown, Lincoln Park, Logan Square, West Loop, Hyde Park, Evanston, Oak Park, and surrounding suburbs.</p>
-        <div class="inline-flex items-center gap-2 text-sky-400 font-semibold text-sm"><i class="fa-solid fa-shield"></i> Guaranteed Same-Day Arrival</div>
+      <div class="glass-card p-8 rounded-3xl space-y-3">
+        <h4 class="text-white font-bold">Chicagoland Service Area</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">Serving Downtown Chicago, Lincoln Park, West Loop, Logan Square, Lakeview, Hyde Park, Evanston, Oak Park, Naperville, and surrounding suburbs.</p>
       </div>
     </div>
   </section>
 </main>
 
-  <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 mt-20">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+  <!-- Footer -->
+  <footer class="bg-[#05080f] border-t border-slate-800/80 pt-16 pb-12 text-slate-400 mt-20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 mb-12">
+      <div class="space-y-4">
+        <div class="text-2xl font-black text-white">Acme<span class="text-sky-400">Services</span></div>
+        <p class="text-sm text-slate-400 leading-relaxed">Chicago's premier 24/7 home repair agency. Licensed plumbers, HVAC technicians, and master electricians available 365 days a year.</p>
+        <div class="flex gap-3 text-sky-400">
+          <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition"><i class="fa-brands fa-google"></i></a>
+          <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition"><i class="fa-brands fa-yelp"></i></a>
+        </div>
+      </div>
       <div>
-        <p class="font-bold text-white text-lg">Acme Home Services Inc.</p>
-        <p class="text-sm">Chicago, IL · Licensed, Bonded & Insured</p>
+        <h4 class="text-white font-bold mb-4">Core Services</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="services.html" class="hover:text-sky-400 transition">Emergency Drain Cleaning</a></li>
+          <li><a href="services.html" class="hover:text-sky-400 transition">Water Heater Installation</a></li>
+          <li><a href="services.html" class="hover:text-sky-400 transition">Furnace & AC Repair</a></li>
+          <li><a href="services.html" class="hover:text-sky-400 transition">200A Electrical Panel Upgrade</a></li>
+          <li><a href="services.html" class="hover:text-sky-400 transition">EV Charger Installation</a></li>
+        </ul>
       </div>
-      <div class="flex flex-wrap gap-4 text-sm font-semibold">
-        <a href="index.html" class="hover:text-sky-400">Home</a>
-        <a href="services.html" class="hover:text-sky-400">Services</a>
-        <a href="about.html" class="hover:text-sky-400">About Us</a>
-        <a href="pricing.html" class="hover:text-sky-400">Pricing</a>
-        <a href="contact.html" class="hover:text-sky-400">Contact</a>
+      <div>
+        <h4 class="text-white font-bold mb-4">Company</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="about.html" class="hover:text-sky-400 transition">About Our Team</a></li>
+          <li><a href="pricing.html" class="hover:text-sky-400 transition">Upfront Pricing Calculator</a></li>
+          <li><a href="contact.html" class="hover:text-sky-400 transition">Chicago Service Areas</a></li>
+          <li><a href="about.html" class="hover:text-sky-400 transition">Licenses & Insurance</a></li>
+          <li><a href="contact.html" class="hover:text-sky-400 transition">24/7 Dispatch Hotline</a></li>
+        </ul>
       </div>
-      <p class="text-sm">&copy; 2026 Acme Home Services. Built with PurePulse AI.</p>
+      <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 space-y-3">
+        <h4 class="text-white font-bold">Need Immediate Help?</h4>
+        <p class="text-xs text-slate-400">Our dispatchers are online right now in Chicago.</p>
+        <a href="tel:3125550199" class="block text-center bg-gradient-to-r from-sky-500 to-blue-600 text-white font-extrabold py-3 rounded-xl shadow-lg shadow-sky-500/25">
+          Call (312) 555-0199
+        </a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+      <p>&copy; 2026 Acme Home Services Inc. All rights reserved. License #055-194821.</p>
+      <p class="flex gap-6"><a href="index.html" class="hover:underline">Privacy Policy</a><a href="index.html" class="hover:underline">Terms of Service</a><a href="index.html" class="hover:underline">Guarantee Policy</a></p>
     </div>
   </footer>
-</body></html>
+</body>
+</html>
